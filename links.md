@@ -14,3 +14,14 @@ To run Haskell in interactive mode in console via Docker:
 ```
 docker run -it --rm haskell:7.8
 ```
+
+Limit resources used by Haskell:
+
+- shell command, versatile approach (use with caution)
+  ```
+  ulimit --help
+  ```
+- GHCi way (you need to install stack-haskell first)
+  ```
+  stack ghci --ghci-options="+RTS -M256m -K256m -RTS"
+  ```
