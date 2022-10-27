@@ -15,6 +15,8 @@
 
 - https://habr.com/ru/post/247213/ - статья про ленивые вычисления и Weak Head Normal Form; также чекай автора, у него есть некоторые другие
   интересные статьи (теория сложности и проч.)
+- https://habr.com/ru/post/581234/ - написание компилятора на Haskell + LLVM; может пригодиться в будущем для pet-project; также чекай связанные ссылки,
+  хотя ты их уже читал и это не обязательно
 
 ### Running Haskell
 To run Haskell in interactive mode in console via Docker:
