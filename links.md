@@ -20,6 +20,8 @@
 - https://habr.com/ru/post/581234/ - написание компилятора на Haskell + LLVM; может пригодиться в будущем для pet-project; также чекай связанные ссылки,
   хотя ты их уже читал и это не обязательно
 - https://stackoverflow.com/questions/13042353/does-haskell-have-tail-recursive-optimization - о tail/guarded-рекурсии в Hakell и прочие связанные полезности
+- https://www.reddit.com/r/haskell/comments/1f48dc/what_does_the_haskell_runtime_look_like/ - что-то про runtime и потребляемую память / эффективность,
+  но пока не начинал читать
 
 ### Running Haskell
 To run Haskell in interactive mode in console via Docker:
