@@ -1,6 +1,9 @@
 module Simple where
 
 
+import Data.Char
+
+
 -- GHCi> addTwoElements 2 12 [85,0,6]
 -- [2,12,85,0,6]
 addTwoElements :: a -> a -> [a] -> [a]
@@ -48,3 +51,17 @@ oddsOnly :: Integral a => [a] -> [a]
 oddsOnly [] = []
 oddsOnly (x : xs) | odd x     = x : oddsOnly xs
                   | otherwise = oddsOnly xs
+
+-- GHCi> readDigits "365ads"
+-- ("365","ads")
+-- GHCi> readDigits "365"
+-- ("365","")
+
+readDigits :: String -> (String, String)
+readDigits lst = span isDigit lst
+
+-- GHCi> filterDisj (< 10) odd [7,8,10,11,12]
+-- [7,8,11]
+
+filterDisj :: (a -> Bool) -> (a -> Bool) -> [a] -> [a]
+filterDisj p1 p2 lst = filter (\x -> p1 x || p2 x) lst
