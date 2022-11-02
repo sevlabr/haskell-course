@@ -65,3 +65,10 @@ readDigits lst = span isDigit lst
 
 filterDisj :: (a -> Bool) -> (a -> Bool) -> [a] -> [a]
 filterDisj p1 p2 lst = filter (\x -> p1 x || p2 x) lst
+
+-- GHCi> squares'n'cubes [3,4,5]
+-- [9,27,16,64,25,125]
+
+squares'n'cubes :: Num a => [a] -> [a]
+squares'n'cubes lst = concatMap (\x -> [x^2, x^3]) lst
+-- squares'n'cubes lst = concat [map (^2) lst, map (^3) lst] -- [9,16,25,27,64,125]
