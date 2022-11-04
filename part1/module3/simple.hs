@@ -72,3 +72,33 @@ filterDisj p1 p2 lst = filter (\x -> p1 x || p2 x) lst
 squares'n'cubes :: Num a => [a] -> [a]
 squares'n'cubes lst = concatMap (\x -> [x^2, x^3]) lst
 -- squares'n'cubes lst = concat [map (^2) lst, map (^3) lst] -- [9,16,25,27,64,125]
+
+-- GHCi> delAllUpper "Abc IS not ABC"
+-- "Abc not"
+
+delAllUpper :: String -> String
+delAllUpper = unwords . filter (not . all isUpper) . words
+
+-- GHCi> max3 [7,2,9] [3,6,8] [1,8,10]
+-- [7,8,10]
+-- GHCi> max3 "AXZ" "YDW" "MLK"
+-- "YXZ"
+
+max3 :: Ord a => [a] -> [a] -> [a] -> [a]
+max3 = zipWith3 (\x y z -> max x $ max y z)
+
+-- GHCi> take 10 $ fibStream
+-- [0,1,1,2,3,5,8,13,21,34]
+
+fibStream :: [Integer]
+fibStream = [0,1] ++ zipWith (+) fibStream (tail fibStream)
+-- fibStream = [0,1] ++ [seq 1 (fibStream!!((length fibStream) - 1) + fibStream!!((length fibStream) - 2))] -- kinda shows the idea but doesn't work
+
+-- Написать определение функции repeat через iterate
+
+repeat' :: a -> [a]
+repeat' = iterate repeatHelper
+  
+  where
+    repeatHelper :: a -> a
+    repeatHelper = id
