@@ -14,6 +14,9 @@ instance Enum Odd where
 
   toEnum x         = Odd $ toInteger x * 2 + 1
   fromEnum (Odd x) = quot (fromInteger x - 1) 2
+  -- -- Simple version of toEnum and fromEnum
+  -- toEnum x         = Odd $ toInteger x
+  -- fromEnum (Odd x) = fromEnum x
   
   enumFrom = iterate succ
 
@@ -74,7 +77,8 @@ test16 =        [testVal 5, testVal 3 .. testVal 3]  ==             [testVal 5, 
 -- toEnum & fromEnum
 test17 = toEnum (fromEnum (Odd 3)) == Odd 3
 
--- Это сомнительный тест. Скорее всего, его нет на Stepik
+-- Это сомнительный тест. Скорее всего, его нет на Stepik.
+-- (Но упрощенная версия toEnum и fromEnum тут не работает)
 test18 = fromEnum (Odd 3) + 1 == fromEnum (Odd 5)
 
 -- Статистика по тестам
