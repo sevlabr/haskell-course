@@ -166,8 +166,18 @@ meanList = uncurry (/) . foldr (\x (s, l) -> (s + x, l + 1)) (0, 0)
 -- GHCi> take 3 (evenOnly [1..])
 -- [2,4,6]
 
+-- Универсальное решение
 evenOnly :: [a] -> [a]
-evenOnly = undefined
+evenOnly []         = []
+evenOnly (x:[])     = []
+evenOnly (x:y:[])   = [y]
+evenOnly (x:y:vals) = y : evenOnly vals
+
+-- Если использовать свёртку, то хитрость в том, чтобы заставить вычислить xs и ys сразу.
+-- Тильда как-то в этом помогает (ещё не проходили):
+-- evenOnly''''' = snd . foldr (\x ~(xs, ys) -> (x : ys, xs)) ([], [])
+-- Ещё может помочь локальное связывание. Тоже форсирует вычисления, видимо.
+-- evenOnly'''''' = snd . foldr (\a l -> let (xs, ys) = l in (a:ys, xs)) ([], [])
 
 -- Works right on finite lists. But ineffective. Because of ++ [x] and (maybe) simple foldl
 evenOnly' :: [a] -> [a]
@@ -177,3 +187,20 @@ evenOnly' = fst . foldl (\(l, c) x -> if even c then (l ++ [x], c + 1) else (l, 
 -- Beautiful
 -- evenOnly''' = snd . foldr (\x (xs, ys) -> (x:ys, xs)) ([], [])
 -- evenOnly'''' = fst . foldl' (\(l, c) x -> if even c then (l ++ [x], c + 1) else (l, c + 1)) ([], 1)
+
+
+
+lastElem :: [a] -> a
+-- lastElem []     = error "Empty list"
+-- lastElem (x:[]) = x
+-- lastElem (x:xs) = lastElem xs
+lastElem = foldl1 (flip const)
+
+
+
+-- GHCi> revRange ('a','z')
+-- "zyxwvutsrqponmlkjihgfedcba"
+
+revRange :: (Char,Char) -> [Char]
+revRange = unfoldr g 
+  where g = \(l, r) -> if l > r then Nothing else Just (r, (l, pred r))

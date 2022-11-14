@@ -12,6 +12,7 @@
 - https://github.com/bitemyapp/learnhaskell - useful materials
 - https://github.com/krispo/awesome-haskell - also useful materials
 - http://learnyouahaskell.com/ - еще один онлайн учебник; говорят, что хороший
+- https://github.com/quchen/articles/blob/master/build.md - статьи о Haskell
 
 #### Specialized
 
