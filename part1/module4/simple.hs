@@ -48,3 +48,16 @@ stringToColor = read
 -- stringToColor "Red"   = Red
 -- stringToColor "Green" = Green
 -- stringToColor "Blue"  = Blue
+
+
+data Person = Person { firstName :: String, lastName :: String, age :: Int } deriving(Show)
+
+updateLastName :: Person -> Person -> Person
+updateLastName p1 p2 = p2 {lastName = lastName p1}
+
+testUpdateLastName =
+    let
+      p1 = Person { firstName = "John", lastName = "Jefferson", age = 33}
+      p2 = Person { firstName = "Ashley", lastName = "Brown", age = 31}
+    in
+      updateLastName p1 p2

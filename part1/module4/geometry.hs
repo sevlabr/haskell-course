@@ -22,3 +22,26 @@ data Shape = Circle Double | Rectangle Double Double
 area :: Shape -> Double
 area (Circle    r)   = pi * r^2
 area (Rectangle a b) = a * b
+
+square :: Double -> Shape
+square a = Rectangle a a
+
+isSquare :: Shape -> Bool
+isSquare (Rectangle a b) = a == b
+isSquare _               = False
+
+-- using square function
+-- isSquare rect@(Rectangle x y) = square x == rect
+
+-- using Pattern Guards (another way for Pattern Matching)
+-- isSquare rect
+--     | (Rectangle a b) <- rect
+--     = a == b
+--     | _ <- rect
+--     = False
+
+-- https://wiki.haskell.org/Pattern_guard
+isSquare' :: Shape -> Bool
+isSquare' s | (Rectangle a b) <- s
+            , a == b    = True
+            | otherwise = False
