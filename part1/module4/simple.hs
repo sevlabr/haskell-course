@@ -61,3 +61,14 @@ testUpdateLastName =
       p2 = Person { firstName = "Ashley", lastName = "Brown", age = 31}
     in
       updateLastName p1 p2
+
+abbrFirstName :: Person -> Person
+abbrFirstName p@(Person {firstName = fn}) | length fn <= 1 = p
+                                          | otherwise      = p {firstName = [head fn] ++ "."}
+
+testAbbrFirstName =
+    let
+        p1 = Person "Ivan" "Bogdanoff" 23
+        p2 = Person "A"    "Brown"     20
+    in
+        (abbrFirstName p1, abbrFirstName p2)

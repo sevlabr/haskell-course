@@ -24,6 +24,8 @@
 - https://www.reddit.com/r/haskell/comments/1f48dc/what_does_the_haskell_runtime_look_like/ - что-то про runtime и потребляемую память / эффективность,
   но пока не начинал читать
 - http://pointfree.io/ - автоматический перевод конструкций языка Haskell в point-free стиль
+- https://stackoverflow.com/questions/18934882/haskell-line-of-code-not-compiling-illegal-datatype-context - как наложить ограничение (контекст)
+  на пользовательский тип данных (Note: эта функция убрана из новых версий Haskell)
 
 ### Running Haskell
 To run Haskell in interactive mode in console via Docker:
