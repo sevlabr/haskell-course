@@ -113,3 +113,14 @@ eitherToMaybe (Right _) = Nothing
 -- Это инфиксный конструктор данных
 
 -- Чтобы компилятор понимал, что происходит, они обозначаются всегда с ":" в начале. По аналогии с конструкторами данных с больших букв
+
+
+data List a = Nil | Cons a (List a)
+
+fromList :: List a -> [a]
+fromList Nil         = []
+fromList (Cons l ls) = l : fromList ls
+
+toList :: [a] -> List a
+toList []     = Nil
+toList (l:ls) = Cons l (toList ls)
