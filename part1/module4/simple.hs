@@ -1,5 +1,7 @@
 module Simple where
 
+import Data.Char
+
 
 
 -- GHCi> show Red
@@ -72,3 +74,42 @@ testAbbrFirstName =
         p2 = Person "A"    "Brown"     20
     in
         (abbrFirstName p1, abbrFirstName p2)
+
+
+findDigit :: [Char] -> Maybe Char
+findDigit [] = Nothing
+findDigit (c:cs) | isDigit c = Just c
+                 | otherwise = findDigit cs
+
+findDigitOrX :: [Char] -> Char
+findDigitOrX cs =
+    case findDigit cs of
+        Nothing -> 'X'
+        Just c  -> c
+
+-- maybeToList $ Just (1::Int) = [1]
+-- maybeToList $ Nothing = []
+maybeToList :: Maybe a -> [a]
+maybeToList ma =
+    case ma of
+        Nothing -> []
+        Just a  -> [a]
+
+-- listToMaybe [1,2,3] = Just 1
+-- listToMaybe [] = Nothing
+listToMaybe :: [a] -> Maybe a
+listToMaybe []     = Nothing
+listToMaybe (a:as) = Just a
+
+
+eitherToMaybe :: Either a b -> Maybe a
+eitherToMaybe (Left  a) = Just a
+eitherToMaybe (Right _) = Nothing
+
+-- 2 :+ 5 means complex number (2 + i*5)
+-- 2 :+ (-5) means complex number (2 - i*5)
+-- They are defined in Data.Complex and use strict constructor (eager behaviour, not lazy) with "!", like: data Coord a = Coord !a !a
+-- Data.Ratio: !a :% !a
+-- Это инфиксный конструктор данных
+
+-- Чтобы компилятор понимал, что происходит, они обозначаются всегда с ":" в начале. По аналогии с конструкторами данных с больших букв
