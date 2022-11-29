@@ -13,6 +13,8 @@
 - https://github.com/krispo/awesome-haskell - also useful materials
 - http://learnyouahaskell.com/ - еще один онлайн учебник; говорят, что хороший
 - https://github.com/quchen/articles/blob/master/build.md - статьи о Haskell
+- https://www.haskellforall.com/ - какой-то блог по Haskell (говорят, тут хорошо написано про линзы)
+- https://patternsinfp.wordpress.com/ - что-то более "научное" про Hakell FP
 
 #### Specialized
 
@@ -26,6 +28,12 @@
 - http://pointfree.io/ - автоматический перевод конструкций языка Haskell в point-free стиль
 - https://stackoverflow.com/questions/18934882/haskell-line-of-code-not-compiling-illegal-datatype-context - как наложить ограничение (контекст)
   на пользовательский тип данных (Note: эта функция убрана из новых версий Haskell)
+
+##### Smth about Functors and Monads
+- https://adit.io/ - useful resource (Functors, Applicative Functors, Monads, Lenses etc.)
+- https://habr.com/ru/post/183150/ - Functors, Applicative Functors and Monads (translated from adit)
+- https://habr.com/ru/post/184722/ - 3 Useful Monads (translated from adit)
+- https://egghead.io/courses/professor-frisby-introduces-composable-functional-javascript - maybe useful
 
 ### Running Haskell
 To run Haskell in interactive mode in console via Docker:
