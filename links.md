@@ -15,6 +15,8 @@
 - https://github.com/quchen/articles/blob/master/build.md - статьи о Haskell
 - https://www.haskellforall.com/ - какой-то блог по Haskell (говорят, тут хорошо написано про линзы)
 - https://patternsinfp.wordpress.com/ - что-то более "научное" про Hakell FP
+- https://www.schoolofhaskell.com/ - ещё полезности про Haskell
+- https://ruhaskell.org/ - о Haskell на русском
 
 #### Specialized
 
@@ -28,6 +30,8 @@
 - http://pointfree.io/ - автоматический перевод конструкций языка Haskell в point-free стиль
 - https://stackoverflow.com/questions/18934882/haskell-line-of-code-not-compiling-illegal-datatype-context - как наложить ограничение (контекст)
   на пользовательский тип данных (Note: эта функция убрана из новых версий Haskell)
+- https://downloads.haskell.org/~ghc/7.0.1/docs/html/users_guide/rewrite-rules.html - rewrite rules для оптимизаций компилятора (например, как сказать ему,
+  чтобы он считал fmap (g . h) xs, а не (fmap g . fmap h) xs, потому что так быстрее из-за отсутствия промежуточных списков)
 
 ##### Smth about Functors and Monads
 - https://adit.io/ - useful resource (Functors, Applicative Functors, Monads, Lenses etc.)
