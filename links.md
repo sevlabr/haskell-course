@@ -17,6 +17,7 @@
 - https://patternsinfp.wordpress.com/ - что-то более "научное" про Hakell FP
 - https://www.schoolofhaskell.com/ - ещё полезности про Haskell
 - https://ruhaskell.org/ - о Haskell на русском
+- https://kseo.github.io/ - Kwang's Haskell Blog
 
 #### Specialized
 
@@ -43,6 +44,9 @@
 - https://habr.com/ru/post/183150/ - Functors, Applicative Functors and Monads (translated from adit)
 - https://habr.com/ru/post/184722/ - 3 Useful Monads (translated from adit)
 - https://egghead.io/courses/professor-frisby-introduces-composable-functional-javascript - maybe useful
+- https://www.youtube.com/watch?v=IkXg_mjNgG4&ab_channel=TverIO - Виталий Брагилевский — Монады - не приговор
+- https://habr.com/ru/post/127556/ - серия переводов статей про монады в Haskell; в конце есть ссылки на сайты с полезной инфой
+- https://mvanier.livejournal.com/ - оригиналы статей, переводы которых расположены ссылкой выше
 
 ### Running Haskell
 To run Haskell in interactive mode in console via Docker:

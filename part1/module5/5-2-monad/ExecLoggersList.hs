@@ -20,11 +20,11 @@ bindLog (Log msgInit valInit) f =
     Log (msgInit ++ msg) val
 
 instance Functor Log where
-    fmap = liftM
+  fmap = liftM
  
 instance Applicative Log where
-    pure  = return
-    (<*>) = ap
+  pure  = return
+  (<*>) = ap
 
 instance Monad Log where
   return = returnLog
