@@ -126,4 +126,34 @@ testMyWriter3 = evalWriter (return 3 :: Writer String Int) == 3
 
 testsMyWriter = all (== True) [testMyWriter1, testMyWriter2, testMyWriter3]
 
+
 allMyMonadsTests = all (== True) [testsMyState, testsMyWriter]
+
+
+
+----- Supplementary functions -----
+-- (sequences and mapMs are already imported into Prelude by default)
+
+sequence_' :: Monad m => [m a] -> m ()
+sequence_' = foldr (>>) (return ())
+
+mapM_' :: Monad m => (a -> m b) -> [a] -> m ()
+mapM_' f = sequence_' . map f
+
+sequence' :: Monad m => [m a] -> m [a]
+sequence' ms = foldr k (return []) ms
+  where
+    k :: Monad m => m a -> m [a] -> m [a]
+    k m m' = do
+      x  <- m
+      xs <- m'
+      return (x:xs)
+
+mapM' :: Monad m => (a -> m b) -> [a] -> m [b]
+mapM' f = sequence' . map f
+
+replicateM :: Monad m => Int -> m a -> m [a]
+replicateM n = sequence' . replicate n
+
+replicateM_ :: Monad m => Int -> m a -> m ()
+replicateM_ n = sequence_' . replicate n
