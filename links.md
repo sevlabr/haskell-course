@@ -18,6 +18,7 @@
 - https://www.schoolofhaskell.com/ - ещё полезности про Haskell
 - https://ruhaskell.org/ - о Haskell на русском
 - https://kseo.github.io/ - Kwang's Haskell Blog
+- https://wiki.haskell.org/Typeclassopedia - энциклопедия по основным типам языка Haskell
 - https://marketplace.visualstudio.com/items?itemName=Vans.haskero - расширение для VSCode, позволяющее сделать из нее полноценную IDE для Haskell
 
 #### Specialized
