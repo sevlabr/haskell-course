@@ -3,6 +3,7 @@
 #### Common things
 
 - https://www.ohaskell.guide/pdf/ohaskell.pdf - базовый учебник
+- https://book.realworldhaskell.org/ - большая книга
 - https://www.haskell.org/onlinereport/haskell2010/ - стандарт 2010
 - https://www.haskell.org/ - официальный сайт
 - https://hoogle.haskell.org/ - онлайн справка
