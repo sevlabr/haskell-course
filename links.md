@@ -67,3 +67,8 @@ Limit resources used by Haskell:
   ```
   stack ghci --ghci-options="+RTS -M256m -K256m -RTS"
   ```
+
+### Books
+- Some very nice books are stored locally in **D:\\haskell\haskell-ebook-master**. Online links to some of them are provided above
+  (Learn You a Haskell for a Greater Good, Real World Haskell). The most interesting probably are: Parallel and Concurrent Programming
+  in Haskell, Developing Web Apps with Haskell and Yesod, 2nd.
