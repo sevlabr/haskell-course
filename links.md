@@ -36,11 +36,13 @@
   на пользовательский тип данных (Note: эта функция убрана из новых версий Haskell)
 - https://downloads.haskell.org/~ghc/7.0.1/docs/html/users_guide/rewrite-rules.html - rewrite rules для оптимизаций компилятора (например, как сказать ему,
   чтобы он считал fmap (g . h) xs, а не (fmap g . fmap h) xs, потому что так быстрее из-за отсутствия промежуточных списков)
-- https://en.wikibooks.org/wiki/Haskell/Category_theory - теория категорий в контексте Haskell. Можно также посмотреть другие статьи на сайте (https://en.wikibooks.org/wiki/Haskell)
+- https://en.wikibooks.org/wiki/Haskell/Category_theory - теория категорий в контексте Haskell. Можно также посмотреть другие статьи на сайте                             (https://en.wikibooks.org/wiki/Haskell)
 - https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/ - теория категорий для программистов (остальной сайт тоже стоит посмотреть)
 - https://habr.com/ru/post/245797/ - переводы некоторых статей по ссылке выше
 - https://www.youtube.com/watch?v=I8LbkfSSR58&list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_&index=1&ab_channel=BartoszMilewski - YT, связанный с 2 ссылками выше
 - https://stackoverflow.com/questions/7746894/are-there-pronounceable-names-for-common-haskell-operators - имена операторов в Haskell
+- https://habr.com/ru/company/typeable/blog/570922/ - статья о QuickCheck - библиотеке для тестирования, основанной на property-based testing (PBT) подходе; идея в       том, чтобы формально задать ожидаемые свойства тестируемого блока кода, а потом запустить рандомную генерацию (типа как в fuzz-testing) тест-кейсов с учётом этих       свойств (https://github.com/nick8325/quickcheck)
+- https://habr.com/ru/company/typeable/blog/543998/ - статья-туториал по феб-фреймворку [Reflex](https://reflex-frp.org/), основанному на парадигме functional reactive   programming (FRP) (есть ещё Yesod, см. раздел Books здесь)
 
 ##### Smth about Functors and Monads
 - https://adit.io/ - useful resource (Functors, Applicative Functors, Monads, Lenses etc.)
